@@ -1,0 +1,181 @@
+<!-- Navbar -->
+<!-- <nav class="navbar navbar-expand-lg navbar-light" style="background: #9FC5E8">
+   
+    <div class="container">
+      
+        <a class="navbar-brand me-2" href="">
+            MOD-C-Management
+        </a> &nbsp;
+      
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+      
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            </ul>
+            
+            
+            <div class="d-flex align-items-center">
+                
+
+                <div class="dropdown" style="margin-left:60%;">
+                    <button type="button" class="btn  dropdown-toggle" data-bs-toggle="dropdown">{{userName}}
+                        <img
+                        src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+                        class="rounded-circle"
+                        height="25"
+                        alt="Black and White Portrait of a Man"
+                        loading="lazy"
+                      />
+                    </button>
+                    <ul class="dropdown-menu">
+                      
+                        <li> <a routerLink="/login" class="dropdown-item"><i
+                                    class="fa fa-sign-out">&nbsp;&nbsp;&nbsp;&nbsp;Logout</i></a></li>
+
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+       
+    </div>
+   
+</nav> -->
+
+<!-- <div><app-navbar></app-navbar></div> -->
+<div class="container-fluid" >
+
+
+    <div class="row">
+        <div class="col-md-3 ">
+            <app-side-nav></app-side-nav>
+        </div>
+        <!-- </div> -->
+        <!-- <app-side-nav></app-side-nav> -->
+        <!-- <section> -->
+        <div class="col-md-9">
+            <!-- <section style=" background-color:bisque; height: 1000px;" > -->
+            <!-- <section class="h-auto d-inline-block" >  -->
+            <section>
+                <!-- <div class="container-fluid " > -->
+
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                    <!-- <h1 class="h3 mb-0 text-gray-800">Hi {{userList.userName}} </h1> -->
+                    <h1 class="h3 mb-0 text-gray-800">Hi {{userName}} </h1>
+                    <!-- <h4 class=" name mt-3 ">{{userList.userName}}</h4> -->
+                    <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                        class="fas fa-download fa-sm text-white-50"></i> Generate Report</a> -->
+                </div>
+
+                <!-- Content Row -->
+                <div class="row">
+
+
+                  
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-info shadow h-100 py-2" style="background-color:rgb(235, 139, 23); ">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks
+                                        </div>
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col-auto">
+                                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="progress progress-sm mr-2">
+                                                    <div class="progress-bar bg-info" role="progressbar"
+                                                        style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+          
+                    <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="card border-left-warning shadow h-100 py-2" style="background-color:rgb(72, 125, 175); ">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col mr-2">
+                                        <div routerLink="../active"
+                                            class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                            Active Users</div>
+                                        
+                                    </div>
+                                    <div class="col-auto">
+                                        <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& -->
+
+                <!--++++++++++++++++++++++++++++++++++++++++++++++++= -->
+                <!-- =========================================================== -->
+                <div class="container">
+                    <div class="row ">
+                        <div class="col-md-6 shadow p-3 mb-5 bg-body-tertiary rounded">
+                            <div class="px-3">
+                            <h5 class="h5"><u><b>Active Users</b></u></h5>
+                            <select class="form-select" name="Ppub" #selectid value="" (change)="viewDay($event)">
+                                <option *ngFor="let entity of entities; let i = index" value="{{entity.name}}"
+                                    [selected]="i == 0 ? true : null" (onload)="fooFunction(i, entity.name)">
+                                    {{entity.name}}
+                                </option>
+
+                            </select>
+                            <canvas id="myChart">
+
+                            </canvas>
+</div>
+                        </div>
+                        <div class="col-md-6 shadow p-3 mb-5 bg-body-tertiary rounded">
+                            <div class="px-3">
+                                <app-lead></app-lead>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6 shadow p-3 mb-5 bg-body-tertiary rounded">
+                            <div class="px-3">
+                            <app-influence-visit></app-influence-visit> 
+                            </div>
+                        </div>
+                        <div class="col-md-6 shadow p-3 mb-5 bg-body-tertiary rounded">
+                         <app-lead-volume></app-lead-volume>   
+                        </div>
+                    </div>
+                </div>
+                <!-- ================================================================= -->
+<div class="bottom-section">
+    <div class="widget col-md-11 shadow p-3 mb-5 bg-body-tertiary rounded">
+      <app-active-users></app-active-users>
+    </div>
+    </div>
+                
+
+            </section>
+        </div>
+    </div>
+</div>
